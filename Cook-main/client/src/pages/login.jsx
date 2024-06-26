@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./login.css"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate} from 'react-router-dom'
 import axios from "axios";
 
 function Login() {
@@ -28,8 +28,6 @@ function Login() {
         };
     }, []); // Empty dependency array ensures that this effect runs only once after the initial render
 
-    // Rest of your component code...
-
     const [username, setUsername] = useState("");
     const [dob, setDob] = useState("");
     const [email, setEmail] = useState("");
@@ -38,16 +36,23 @@ function Login() {
     const [registerStatus, setRegisterStatus] = useState("");
 
     const register = (e) => {
+        e.preventDefault();
+        // Check if any fields are empty
+        if (!username || !dob || !email || !password) {
+            alert('Please fill in all fields');
+            return;
+        }
         const userData = {
             username: username,
             dob: dob,
             email: email,
             password: password
         }
-        e.preventDefault();
+        
         axios.post("http://localhost:8081/register", userData, { headers: { "Content-Type": "application/json" } }).then((response) => {
             if (response.data.message) {
                 setRegisterStatus(response.data.message);
+                alert('Account Created Successfully')
             } else {
                 setRegisterStatus("Account created successfully");
             }
@@ -62,15 +67,21 @@ function Login() {
         }).then((response) => {
             if (response.data.message) {
                 setLoginStatus(response.data.message);
-            } else {
+            } else if (response.data.length > 0) {
                 setLoginStatus(response.data[0].email);
+                navigate('/'); // Redirect to home page
+            } else {
+                alert('Incorrect email or password');
             }
-        })
+        }).catch(error => {
+            alert('An error occurred while logging in. Please try again later.');
+            console.error('Login error:', error);
+        });
     }
 
 
     return (
-        <div className='logining'>
+        <div className='loginimg'>
             <header>
                 <nav className="navigation">
                     {/* Navigation content */}
@@ -118,7 +129,7 @@ function Login() {
                         <div className="input-box">
                             <span className="icon"><ion-icon name="calendar"></ion-icon></span>
                             <input type="date" name="dob" onChange={(e) => { setDob(e.target.value) }} required placeholder="yyyy/mm/dd" />
-                            <label>DOB</label>
+                            <label></label>
                         </div>
                         <div className="input-box">
                             <span className="icon"><ion-icon name="mail-unread"></ion-icon></span>

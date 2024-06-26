@@ -65,7 +65,7 @@ header ul a {
 .wrapper{
 
         position: absolute;
-        top: 80px; /* Adjust this value to position it below the header */
+        top: 370px; /* Adjust this value to position it below the header */
         right: 90px; /* Position it on the right side */
         width: 980px;
         height: 570px;
@@ -116,7 +116,7 @@ header ul a {
         color:white;
         position:absolute;
         left:0;
-        top:490px;
+        top:560px;
         margin-left:20px;
         text-decoration: underline;
 
@@ -127,7 +127,7 @@ header ul a {
         color: white;
         position: absolute;
         left: 0;
-        top: 550px; /* Adjust as needed */
+        top: 600px; /* Adjust as needed */
         margin-left: 20px; /* Adjust as needed */
 
     }

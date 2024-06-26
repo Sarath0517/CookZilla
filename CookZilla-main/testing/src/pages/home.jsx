@@ -71,7 +71,7 @@ function Home() {
                 <h1 className="animate">Give it a Try!!!</h1>
                 <p className="animate">Try our AI integrated recipe finder</p>
             </section>
-            <Link to="./search">
+            <Link to="/search">
                 <button className="c-button c-button--gooey"> Recipes
                     <div className="c-button__blobs">
                         <div></div>
@@ -85,7 +85,7 @@ function Home() {
                     <filter id="goo">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
                         <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
-                        <feBlend in="SourceGraphic" in2="goo"></feBlend>    
+                        <feBlend in="SourceGraphic" in2="goo"></feBlend>
                     </filter>
                 </defs>
             </svg>
@@ -94,12 +94,12 @@ function Home() {
                 <p className="animate">Find different cuisines</p>
             </section>
             <section className="sec-5">
-                <div className="images">                   
+                <div className="images">
                     <img src="American.jpg" alt="American cuisine" className="animate" style={{ "--i": 0 }} />
                     <img src="chickentikka.jpg" alt="Chicken Tikka" className="animate" style={{ "--i": 1 }} />
                     <img src="Chinesecuisine.jpg" alt="Chinese cuisine" className="animate" style={{ "--i": 2 }} />
-                    <a href = 'h.html'><img src="Frenchcuisine.jpg" alt="French cuisine" className="animate" style={{ "--i": 3 }} /></a>
-                    <a href = "#"><img src="American.jpg" alt="Italian cuisine" className="animate" style={{ "--i": 4 }} /></a>
+                    <img src="Frenchcuisine.jpg" alt="French cuisine" className="animate" style={{ "--i": 3 }} />
+                    <img src="Indiancuisine.jpg" alt="Indian cuisine" className="animate" style={{ "--i": 4 }} />
                 </div>
             </section>
             <div className="about-us">

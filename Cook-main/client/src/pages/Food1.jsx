@@ -1,5 +1,6 @@
 import React from 'react';
 import './foodpage.css'; // Import CSS file
+import { Link, useNavigate} from 'react-router-dom';
 
 const SpaghettiRecipe = () => {
     return (
@@ -22,7 +23,7 @@ const SpaghettiRecipe = () => {
 
             <main>
                 <div className="container">
-                    <img src="italiancuisine.jpg" alt="Italian Cuisine" className="spaghetti" />
+                    <img src="Spaghetti.jpg" alt="Italian Cuisine" className="spaghetti" />
                     <div className="wrapper">
                         <div className="recipe">
                             <h1>Spaghetti</h1>
